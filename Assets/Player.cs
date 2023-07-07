@@ -6,29 +6,41 @@ public class Player : MonoBehaviour
 {
 
     public bool isHoldingItem = false;
+    private bool isCollidingWithItem = false;
+    private Item currentHeldItem;
     private float movementSpeed = 5f;
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start(){
+        currentHeldItem = null;
     }
 
     void Update() {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-
         transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
 
+        if (Input.GetKeyDown(KeyCode.Space) && isCollidingWithItem) {
+
+            if (currentHeldItem != null) {
+                currentHeldItem.FollowPlayer();
+                isHoldingItem = true;
+            }
+        }
+        
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
+    void OnTriggerEnter2D(Collider2D collider) {
         Debug.Log("Hit");
-        //if (collision.gameObject.CompareTag("item")) {
-            //ScriptItem scriptItem = collision.gameObject.GetComponent<ScriptItem>();
-            //if (scriptItem != null) {
-               // scriptItem.FollowPlayer();
-                //isHoldingItem = true;
-           // }
-        //}
+        if (collider.gameObject.CompareTag("item")) {
+            isCollidingWithItem = true;
+            currentHeldItem = collider.gameObject.GetComponent<Item>();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider) {
+        Debug.Log("Hit");
+        if (collider.gameObject.CompareTag("item")) {
+            isCollidingWithItem = false;
+        }
     }
 }
