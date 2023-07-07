@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     {
         if (isFollowingPlayer)
         {
-            Vector3 offset = (player.position - transform.position).normalized * -1f; // Adjust the offset value as desired
+            Vector3 offset = (player.position - transform.position).normalized * -2f; // Adjust the offset value as desired
             Vector3 targetPosition = player.position + offset;
 
             // Move towards the target position

@@ -19,8 +19,12 @@ public class Player : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical");
         transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isCollidingWithItem) {
+        if(isHoldingItem && Input.GetKeyDown(KeyCode.Space)){
+            isHoldingItem = false;
+            currentHeldItem.UnfollowPlayer();
 
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && isCollidingWithItem) {
             if (currentHeldItem != null) {
                 currentHeldItem.FollowPlayer();
                 isHoldingItem = true;
@@ -31,7 +35,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) {
         Debug.Log("Hit");
-        if (collider.gameObject.CompareTag("item")) {
+        if (collider.gameObject.CompareTag("item") && !isHoldingItem) {
             isCollidingWithItem = true;
             currentHeldItem = collider.gameObject.GetComponent<Item>();
         }
@@ -39,7 +43,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider) {
         Debug.Log("Hit");
-        if (collider.gameObject.CompareTag("item")) {
+        if (collider.gameObject.CompareTag("item") && !isHoldingItem) {
             isCollidingWithItem = false;
         }
     }
