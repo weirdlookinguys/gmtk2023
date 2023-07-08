@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
         if(isHoldingItem && Input.GetKeyDown(KeyCode.Space)){
             isHoldingItem = false;
             currentHeldItem.UnfollowPlayer();
+            currentHeldItem = null;
 
         }
         else if (Input.GetKeyDown(KeyCode.Space) && isCollidingWithItem) {
