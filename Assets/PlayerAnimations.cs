@@ -17,7 +17,9 @@ public class PlayerAnimations : MonoBehaviour
 
     // Grabbing
     [SerializeField]
-    Vector3[] GrabPosition, GrabPositionBack;
+    GameObject GrabPosition, GrabPositionL;
+    [SerializeField]
+    float Offset;
 
     // Animations
     [SerializeField]
@@ -98,8 +100,41 @@ public class PlayerAnimations : MonoBehaviour
         animBackL.SetBool("isMoving", isMoving);
         if (isMoving) 
         {
-            Parts[0].gameObject.transform.localPosition = Vector3.Lerp(Vector3.zero, new Vector3(0, Mathf.Sin(Time.time * Speed) * Magnitude, 0), .25f);
-            PartsBack[0].gameObject.transform.localPosition = Vector3.Lerp(Vector3.zero, new Vector3(0, Mathf.Sin(Time.time * Speed) * Magnitude, 0), .25f);
+            Vector3 Curve = new Vector3(0, Mathf.Sin(Time.time * Speed) * Magnitude, 0);
+            Parts[0].gameObject.transform.localPosition = Vector3.Lerp(Parts[0].gameObject.transform.localPosition, Curve, .25f);
+            Parts[5].gameObject.transform.localPosition = Vector3.Lerp(Parts[5].gameObject.transform.localPosition, Parts[5].gameObject.transform.localPosition + Curve, .25f);
+            Parts[6].gameObject.transform.localPosition = Vector3.Lerp(Parts[6].gameObject.transform.localPosition, Parts[6].gameObject.transform.localPosition + Curve, .25f);
+            PartsBack[0].gameObject.transform.localPosition = Vector3.Lerp(PartsBack[0].gameObject.transform.localPosition, Curve, .25f);
+            PartsBack[3].gameObject.transform.localPosition = Vector3.Lerp(PartsBack[3].gameObject.transform.localPosition, PartsBack[3].gameObject.transform.localPosition + Curve, .25f);
+            PartsBack[4].gameObject.transform.localPosition = Vector3.Lerp(PartsBack[4].gameObject.transform.localPosition, PartsBack[4].gameObject.transform.localPosition + Curve, .25f);
+        }
+
+        // Grabbing animation
+        if (GetComponent<Player>().isHoldingItem)
+        {
+            // Set positions
+            Parts[5].gameObject.transform.localPosition = new Vector3(GrabPosition.transform.localPosition.x * Mathf.Clamp(x, -1, 1), GrabPosition.transform.localPosition.y, GrabPosition.transform.localPosition.z) + Parts[5].gameObject.transform.up * Offset;
+            Parts[6].gameObject.transform.localPosition = new Vector3(GrabPositionL.transform.localPosition.x * Mathf.Clamp(x, -1, 1), GrabPositionL.transform.localPosition.y, GrabPositionL.transform.localPosition.z) + Parts[6].gameObject.transform.up * Offset;
+            PartsBack[3].gameObject.transform.localPosition = new Vector3(GrabPosition.transform.localPosition.x * Mathf.Clamp(x, -1, 1), GrabPosition.transform.localPosition.y, GrabPosition.transform.localPosition.z) + PartsBack[3].gameObject.transform.up * Offset;
+            PartsBack[4].gameObject.transform.localPosition = new Vector3(GrabPositionL.transform.localPosition.x * Mathf.Clamp(x, -1, 1), GrabPositionL.transform.localPosition.y, GrabPositionL.transform.localPosition.z) + PartsBack[4].gameObject.transform.up * Offset;
+
+            // Set rotations
+            Vector3 grabDirection = GetComponent<Player>().currentHeldItem.gameObject.transform.position - GrabPosition.transform.position;
+            Vector3 grabDirectionL = GetComponent<Player>().currentHeldItem.gameObject.transform.position - GrabPositionL.transform.position;
+            Parts[5].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirection.y, grabDirection.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
+            Parts[6].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirectionL.y, grabDirectionL.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
+            PartsBack[3].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirection.y, grabDirection.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
+            PartsBack[4].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirectionL.y, grabDirectionL.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
+            Target.transform.position = GetComponent<Player>().currentHeldItem.gameObject.transform.position;
+        }
+        else
+        {
+            // Reset rotations
+            Parts[5].gameObject.transform.rotation = Quaternion.identity;
+            Parts[6].gameObject.transform.rotation = Quaternion.identity;
+            PartsBack[3].gameObject.transform.rotation = Quaternion.identity;
+            PartsBack[4].gameObject.transform.rotation = Quaternion.identity;
+            Target.transform.position = Vector2.zero;
         }
 
         // Eye tracking

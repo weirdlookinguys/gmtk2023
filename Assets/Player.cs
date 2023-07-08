@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     public bool isHoldingItem = false;
     bool isCollidingWithItem = false;
-    Item currentHeldItem;
+    public Item currentHeldItem;
     [SerializeField]
     float movementSpeed = 5f;
     // Start is called before the first frame update
