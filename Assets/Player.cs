@@ -6,9 +6,10 @@ public class Player : MonoBehaviour
 {
 
     public bool isHoldingItem = false;
-    private bool isCollidingWithItem = false;
-    private Item currentHeldItem;
-    private float movementSpeed = 5f;
+    bool isCollidingWithItem = false;
+    Item currentHeldItem;
+    [SerializeField]
+    float movementSpeed = 5f;
     // Start is called before the first frame update
     void Start(){
         currentHeldItem = null;

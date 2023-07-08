@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private Transform player;
-    private bool isFollowingPlayer;
+    [SerializeField]
+    Transform player;
+    bool isFollowingPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         isFollowingPlayer = false;
     }
 
