@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211127754}
   - component: {fileID: 211127753}
+  - component: {fileID: 211127755}
   m_Layer: 0
   m_Name: Leg_R_Back
   m_TagString: Untagged
@@ -200,13 +201,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211127752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06349993, y: -0.22800004, z: 0.118774414}
+  m_LocalPosition: {x: 0.08580971, y: -0.19120002, z: -0.045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1335124207}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &211127755
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211127752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f9fb505058f0ff40bd0565f4f97f329, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &416605752
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,11 +421,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655935655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0325, y: 0.0173, z: -0.1}
+  m_LocalPosition: {x: 0.03249979, y: 0.01730001, z: -0.1000061}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1893115374}
+  m_Father: {fileID: 1752883511}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &655935657
@@ -746,6 +767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885711675}
   - component: {fileID: 885711674}
+  - component: {fileID: 885711676}
   m_Layer: 0
   m_Name: Leg_L_Back
   m_TagString: Untagged
@@ -813,13 +835,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885711673}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.046509743, y: -0.22800004, z: 0.118774414}
+  m_LocalPosition: {x: -0.0242, y: -0.1912, z: -0.045013428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1335124207}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &885711676
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885711673}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9587ea8a7619cb4bb9d9ecc0db0c423, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &993720044
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +1012,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1005190944
@@ -998,6 +1040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025472220}
   - component: {fileID: 1025472221}
+  - component: {fileID: 1025472222}
   m_Layer: 0
   m_Name: Leg_L
   m_TagString: Untagged
@@ -1072,6 +1115,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1025472222
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025472219}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e91f7df9b49fe248b6d00d1d4141ed8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1253618682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1253618683}
   - component: {fileID: 1253618684}
+  - component: {fileID: 1253618685}
   m_Layer: 0
   m_Name: Leg_R
   m_TagString: Untagged
@@ -1156,6 +1220,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1253618685
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253618682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcaf260526783c647b36e3f00ac58144, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1335124206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1357,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 655935656}
+  - {fileID: 1829304383}
   m_Father: {fileID: 1893115374}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1308,6 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldingItem: 0
+  movementSpeed: 1
 --- !u!4 &1824030557
 Transform:
   m_ObjectHideFlags: 0
@@ -1348,7 +1435,6 @@ MonoBehaviour:
   - {fileID: 850863126}
   PartsBack:
   - {fileID: 788192044}
-  - {fileID: 1005190943}
   - {fileID: 211127753}
   - {fileID: 885711674}
   - {fileID: 516208103}
@@ -1357,22 +1443,27 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0.05, y: -0.03, z: -0.1}
   - {x: -0.03, y: 0.02, z: -0.1}
-  - {x: -0.03, y: -0.17, z: 0.3}
-  - {x: 0.05, y: -0.17, z: 0.3}
+  - {x: 0.072, y: -0.17, z: 0.3}
+  - {x: -0.036, y: -0.17, z: 0.3}
   - {x: 0.2, y: -0.17, z: 0.3}
   - {x: -0.15, y: -0.14, z: 0.3}
   FlipPositionBack:
   - {x: 0, y: 0, z: 0}
-  - {x: -0.0167, y: -0.139703, z: 0.1}
-  - {x: 0.06349993, y: -0.228, z: 0.1}
-  - {x: -0.04650974, y: -0.228, z: 0.1}
+  - {x: 0.029, y: -0.1912, z: -0.01}
+  - {x: -0.0810099, y: -0.1912, z: -0.01}
   - {x: 0.165, y: -0.131, z: -0.01}
   - {x: -0.179, y: -0.189, z: -0.01}
   Front: {fileID: 1893115373}
   Back: {fileID: 1335124206}
+  anim: {fileID: 1253618685}
+  animL: {fileID: 1025472222}
+  animBack: {fileID: 211127755}
+  animBackL: {fileID: 885711676}
+  Speed: 20
+  Magnitude: 0.1
   LeftEye: {fileID: 1829304382}
   RightEye: {fileID: 655935655}
-  Radius: 0.2
+  Radius: 0.9
   Target: {fileID: 1832599341}
 --- !u!1 &1829304382
 GameObject:
@@ -1399,11 +1490,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829304382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0524, y: -0.0376, z: -0.1}
+  m_LocalPosition: {x: -0.052400112, y: -0.03760004, z: -0.1000061}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1893115374}
+  m_Father: {fileID: 1752883511}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1829304384
@@ -1481,8 +1572,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832599341}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.229, y: 0.238, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22900009, y: 0.23800004, z: -291.25925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1518,8 +1609,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1752883511}
-  - {fileID: 655935656}
-  - {fileID: 1829304383}
   - {fileID: 1253618683}
   - {fileID: 1025472220}
   - {fileID: 416605753}

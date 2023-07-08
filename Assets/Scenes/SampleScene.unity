@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b2fd8592b304d45ad8c626033426d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1155443226}
 --- !u!212 &446158276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,7 +239,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &446158277
@@ -379,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b2fd8592b304d45ad8c626033426d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1155443226}
 --- !u!212 &999490762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -514,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldingItem: 0
+  movementSpeed: 5
 --- !u!4 &1155443226
 Transform:
   m_ObjectHideFlags: 0
@@ -709,6 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b2fd8592b304d45ad8c626033426d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1155443226}
 --- !u!212 &1470076460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -758,7 +762,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1470076461
@@ -946,7 +950,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0d2f779062c42f4eb3eb6c78179029a, type: 3}
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -15,11 +15,21 @@ public class PlayerAnimations : MonoBehaviour
     // What direction the player is facing
     int x = 1, y = 1;
 
+    // Grabbing
+    [SerializeField]
+    Vector3[] GrabPosition, GrabPositionBack;
+
+    // Animations
+    [SerializeField]
+    Animator anim, animL, animBack, animBackL;
+    [SerializeField]
+    float Speed, Magnitude;
+
     // Eye tracking
     [SerializeField]
     GameObject LeftEye, RightEye;
     Vector3 LeftEyePos, RightEyePos; // Starting positions
-    [SerializeField] 
+    [SerializeField]
     float Radius; // Distance away from the eye starting positions
     [SerializeField]
     GameObject Target; // What the eyes are looking at
@@ -28,7 +38,7 @@ public class PlayerAnimations : MonoBehaviour
     void Start()
     {
         // Get starting positions for forward/backward sprites
-	    StartingPosition = new Vector3[Parts.Length];
+        StartingPosition = new Vector3[Parts.Length];
         for (int i = 0; i < Parts.Length; i++) {
             StartingPosition[i] = Parts[i].gameObject.transform.localPosition;
         }
@@ -80,10 +90,22 @@ public class PlayerAnimations : MonoBehaviour
             }
         }
 
+        // Walking animation
+        bool isMoving = horizontalInput != 0 || verticalInput != 0;
+        anim.SetBool("isMoving", isMoving);
+        animBack.SetBool("isMoving", isMoving);
+        animL.SetBool("isMoving", isMoving);
+        animBackL.SetBool("isMoving", isMoving);
+        if (isMoving) 
+        {
+            Parts[0].gameObject.transform.localPosition = Vector3.Lerp(Vector3.zero, new Vector3(0, Mathf.Sin(Time.time * Speed) * Magnitude, 0), .25f);
+            PartsBack[0].gameObject.transform.localPosition = Vector3.Lerp(Vector3.zero, new Vector3(0, Mathf.Sin(Time.time * Speed) * Magnitude, 0), .25f);
+        }
+
         // Eye tracking
         Vector2 lookingVector = Target.transform.localPosition - LeftEyePos;
         Vector2 lookingVectorRight = Target.transform.localPosition - RightEyePos;
-        LeftEye.transform.localPosition = Vector2.Lerp(LeftEye.transform.localPosition, lookingVector.normalized * Radius, .125f);
-        RightEye.transform.localPosition = Vector2.Lerp(RightEye.transform.localPosition, lookingVectorRight.normalized * Radius, .125f);
+        LeftEye.transform.localPosition = Vector3.Lerp(LeftEye.transform.localPosition, new Vector3(lookingVector.normalized.x * Radius, lookingVector.normalized.y * Radius, LeftEyePos.z), .025f);
+        RightEye.transform.localPosition = Vector3.Lerp(RightEye.transform.localPosition, new Vector3(lookingVectorRight.normalized.x * Radius, lookingVectorRight.normalized.y * Radius, RightEyePos.z), .025f);
     }
 }

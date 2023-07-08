@@ -115,7 +115,7 @@ TextureImporter:
         width: 56
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,7 +136,7 @@ TextureImporter:
         width: 56
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +157,7 @@ TextureImporter:
         width: 2
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,12 +173,12 @@ TextureImporter:
       name: DetectiveHat_3
       rect:
         serializedVersion: 2
-        x: 18
+        x: 5
         y: 7
         width: 7
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: DetectiveHat_4
       rect:
         serializedVersion: 2
-        x: 27
+        x: 14
         y: 3
         width: 8
-        height: 9
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,36 +212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveHat_5
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 12
-        width: 16
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fa5cb1b340db6c4abd8686fe161006a
-      internalID: 1853783703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: DetectiveHat_6
       rect:
         serializedVersion: 2
-        x: 71
-        y: 6
+        x: 66
+        y: 5
         width: 7
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,12 +236,12 @@ TextureImporter:
       name: DetectiveHat_7
       rect:
         serializedVersion: 2
-        x: 81
-        y: 3
+        x: 76
+        y: 2
         width: 8
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,6 +249,90 @@ TextureImporter:
       bones: []
       spriteID: 4628b1b0d882d9b4e939129d08dfea97
       internalID: -1572325089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DetectiveHat_5
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 4
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856f97c99f19edb45ba3a98a1ab019e2
+      internalID: -810399821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DetectiveHat_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 3
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81b3fc4baa649f42937ef2fbb2c9cc5
+      internalID: -139668524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DetectiveHat_9
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 3
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd6823aac31ff44daea43dc632e2bb1
+      internalID: 1132139848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DetectiveHat_10
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 3
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee23ccae6d5c0046a405801b1321c2d
+      internalID: -244490903
       vertices: []
       indices: 
       edges: []
@@ -286,11 +349,14 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       DetectiveHat_3: 1158543085
+      DetectiveHat_8: -139668524
       DetectiveHat_6: 1853783703
       DetectiveHat_1: -1395409161
       DetectiveHat_5: -810399821
       DetectiveHat_0: -1615018532
+      DetectiveHat_10: -244490903
       DetectiveHat_2: 864550625
+      DetectiveHat_9: 1132139848
       DetectiveHat_7: 1618136932
       DetectiveHat_4: -71983836
   mipmapLimitGroupName: 
