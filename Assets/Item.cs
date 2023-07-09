@@ -7,6 +7,8 @@ public class Item : MonoBehaviour
     [SerializeField]
     Transform player;
     bool isFollowingPlayer;
+    bool isJamInCase = false;
+    bool isJamInBaggage = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,10 @@ public class Item : MonoBehaviour
             // Move towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 20f);
         }*/
+        if(isJamInCase && isJamInBaggage)
+        {
+            enabled = false;
+        }
     }
 
     public void FollowPlayer() {
@@ -33,5 +39,35 @@ public class Item : MonoBehaviour
     public void UnfollowPlayer()
     {
         isFollowingPlayer = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Item hit trigger");
+        if (collider.gameObject.CompareTag("jampile"))
+        {
+            collider.gameObject.SetActive(false);
+            isJamInCase = true;
+        }
+
+        if (collider.gameObject.CompareTag("baggage") && isJamInCase)
+        {
+            Debug.Log("Baggage hit trigger");
+            isJamInBaggage = true;
+            this.gameObject.tag = "Untagged";
+            this.gameObject.SetActive(false);
+            
+            //collider.gameObject.SetActive(false);
+            //isJamInCase = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        Debug.Log("No longer hit");
+        if (collider.gameObject.CompareTag("item"))
+        {
+            //isCollidingWithItem = false;
+        }
     }
 }

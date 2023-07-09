@@ -53,6 +53,8 @@ public class Patrol : MonoBehaviour
         if (CanSeePlayer())
         {
             Debug.Log("PlayerSeen!");
+            GameObject.Find("Main Camera").GetComponent<SusTimer>().WasSeen();
+            player.GetComponent<Player>().WasSeen();
         }
     }
 
