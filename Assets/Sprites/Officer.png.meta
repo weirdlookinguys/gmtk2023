@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 95f38f16f850e3f4f87fc81ac742209b
+guid: 602fa22901f88324f93ae3b1748cd273
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -107,76 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DetectiveHat_0
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 26
-        width: 56
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a7b9b1b2cef2a24b96649cb4807e890
-      internalID: -1615018532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveHat_1
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 24
-        width: 56
-        height: 33
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16b3f7cb42e3e2f4fac3d6b7524e63db
-      internalID: -1395409161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveHat_2
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 35
-        width: 2
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c2fb46525af51e4a9fc13ec202e14a9
-      internalID: 864550625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveHat_3
+      name: Officer_0
       rect:
         serializedVersion: 2
         x: 5
-        y: 7
-        width: 7
-        height: 15
+        y: 11
+        width: 17
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,83 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28178bf76aa1d7043a4de0ede8ef59bb
-      internalID: 1158543085
+      spriteID: ef9057ff090deb748b17f2c304f2e6a6
+      internalID: -385226034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveHat_4
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 3
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b88af30cbd387442a209d86d0987248
-      internalID: -71983836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveHat_6
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 5
-        width: 7
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f6d905ff97b78240981ccf6e1a9efc6
-      internalID: 1618136932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveHat_7
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 2
-        width: 8
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4628b1b0d882d9b4e939129d08dfea97
-      internalID: -1572325089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DetectiveHat_5
+      name: Officer_1
       rect:
         serializedVersion: 2
         x: 26
-        y: 4
+        y: 11
         width: 16
-        height: 15
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 856f97c99f19edb45ba3a98a1ab019e2
-      internalID: -810399821
+      spriteID: c5b64ea663d5bb74eb9f9798d9ced687
+      internalID: -483729695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveHat_8
+      name: Officer_2
       rect:
         serializedVersion: 2
-        x: 46
-        y: 3
+        x: 45
+        y: 11
         width: 17
-        height: 16
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e81b3fc4baa649f42937ef2fbb2c9cc5
-      internalID: -139668524
+      spriteID: c671febed4c0eec4aaf841791c70e0fc
+      internalID: 419597098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveHat_9
+      name: Officer_3
       rect:
         serializedVersion: 2
-        x: 87
-        y: 3
-        width: 17
-        height: 19
+        x: 70
+        y: 11
+        width: 14
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cd6823aac31ff44daea43dc632e2bb1
-      internalID: 1132139848
+      spriteID: 228aba3f492cab84192f17e850aa915f
+      internalID: 1892691358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DetectiveHat_10
+      name: Officer_4
       rect:
         serializedVersion: 2
-        x: 110
-        y: 3
-        width: 17
-        height: 18
+        x: 86
+        y: 11
+        width: 19
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,8 +205,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee23ccae6d5c0046a405801b1321c2d
-      internalID: -244490903
+      spriteID: 530a73c5745e94a4d8c9d197255f45bb
+      internalID: 1202421253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Officer_5
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 11
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b2eebaba01f6b4681020405ec45850
+      internalID: -2036305020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Officer_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 11
+        width: 17
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afa78af85a4fd14293b911cae4d2461
+      internalID: -715448991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Officer_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 11
+        width: 16
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e7877f1b695ed4b924d795b48f9779
+      internalID: -822915958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Officer_8
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 11
+        width: 17
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c974b3238724574db4afcd5b9381985
+      internalID: -1091682295
       vertices: []
       indices: 
       edges: []
@@ -348,17 +306,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DetectiveHat_3: 1158543085
-      DetectiveHat_7: 1618136932
-      DetectiveHat_6: 1853783703
-      DetectiveHat_1: -1395409161
-      DetectiveHat_5: -810399821
-      DetectiveHat_0: -1615018532
-      DetectiveHat_10: -244490903
-      DetectiveHat_2: 864550625
-      DetectiveHat_9: 1132139848
-      DetectiveHat_8: -139668524
-      DetectiveHat_4: -71983836
+      Officer_5: -2036305020
+      Officer_3: 1892691358
+      Officer_0: -385226034
+      Officer_6: -715448991
+      Officer_2: 419597098
+      Officer_4: 1202421253
+      Officer_8: -1091682295
+      Officer_1: -483729695
+      Officer_7: -822915958
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
