@@ -20,6 +20,7 @@ public class PlayerAnimations : MonoBehaviour
     GameObject GrabPosition, GrabPositionL;
     [SerializeField]
     float Offset;
+    Player player;
 
     // Animations
     [SerializeField]
@@ -39,6 +40,8 @@ public class PlayerAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<Player>();
+
         // Get starting positions for forward/backward sprites / get FlipPosition and FlipPositionBack from copies
         StartingPosition = new Vector3[Parts.Length];
         for (int i = 0; i < Parts.Length; i++) {
@@ -55,7 +58,6 @@ public class PlayerAnimations : MonoBehaviour
         // Set initial eye positions
         LeftEyePos = LeftEye.transform.localPosition;
         RightEyePos = RightEye.transform.localPosition;
-
     }
 
     // Update is called once per frame
@@ -65,9 +67,19 @@ public class PlayerAnimations : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        // Save directions
-        x = horizontalInput != 0 ? ((int)horizontalInput) : x;
-        y = verticalInput != 0 ? ((int)verticalInput) : y;
+        // Save Directions - changes when the player holds an item
+        if (player.isHoldingItem)
+        {
+            // Set player direction face item
+            x = player.currentCollisionItem.gameObject.transform.position.x > transform.position.x ? 1 : -1; 
+            y = player.currentCollisionItem.gameObject.transform.position.y > transform.position.y ? 1 : -1; 
+        }
+        else
+        {
+            // Save directions with inputs
+            x = horizontalInput != 0 ? ((int)horizontalInput) : x;
+            y = verticalInput != 0 ? ((int)verticalInput) : y;
+        }
 
         // Set forward/backward facing direction
         Back.SetActive(y == 1);
@@ -125,13 +137,13 @@ public class PlayerAnimations : MonoBehaviour
             PartsBack[4].gameObject.transform.localPosition = new Vector3(GrabPositionL.transform.localPosition.x * Mathf.Clamp(x, -1, 1), GrabPositionL.transform.localPosition.y, GrabPositionL.transform.localPosition.z) + PartsBack[4].gameObject.transform.up * Offset;
 
             // Set rotations
-            Vector3 grabDirection = GetComponent<Player>().currentHeldItem.gameObject.transform.position - GrabPosition.transform.position;
-            Vector3 grabDirectionL = GetComponent<Player>().currentHeldItem.gameObject.transform.position - GrabPositionL.transform.position;
+            Vector3 grabDirection = GetComponent<Player>().currentCollisionItem.gameObject.transform.position - GrabPosition.transform.position;
+            Vector3 grabDirectionL = GetComponent<Player>().currentCollisionItem.gameObject.transform.position - GrabPositionL.transform.position;
             Parts[5].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirection.y, grabDirection.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
             Parts[6].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirectionL.y, grabDirectionL.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
             PartsBack[3].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirection.y, grabDirection.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
             PartsBack[4].gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(grabDirectionL.y, grabDirectionL.x) * Mathf.Rad2Deg) + 5f + 90, Vector3.forward);
-            Target.transform.position = GetComponent<Player>().currentHeldItem.gameObject.transform.position;
+            Target.transform.position = GetComponent<Player>().currentCollisionItem.gameObject.transform.position;
         }
         else
         {
