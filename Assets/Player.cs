@@ -13,16 +13,18 @@ public class Player : MonoBehaviour
     public Item currentCollisionItem; // What Items the trigger sees
     public Item currentlyHolding; // What the player is holding
     [SerializeField]
-    float movementSpeed = 5f; 
+    float movementSpeed = 5f;
     float mvtModifier;
 
     // Start is called before the first frame update
-    void Start(){
+    void Start()
+    {
         currentCollisionItem = null;
         mvtModifier = 1;
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -62,16 +64,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.CompareTag("item") && !isHoldingItem) {
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("item") && !isHoldingItem)
+        {
             //isCollidingWithItem = true;
             currentCollisionItem = collider.gameObject.GetComponent<Item>();
         }
     }
 
-    void OnTriggerExit2D(Collider2D collider) {
-        if (collider.gameObject.CompareTag("item") && !isHoldingItem) {
-            //isCollidingWithItem = false;
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("item") && !isHoldingItem && !Input.GetKey(KeyCode.Space))
+        {
+            currentlyHolding = null;
+            currentCollisionItem = null;
+            isHoldingItem = false;
         }
     }
     public void WasSeen()
