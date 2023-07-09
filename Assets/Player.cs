@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         }
 
         // Pick up / drop item
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Holding Space");
             if (currentlyHolding == null && currentCollisionItem != null)
