@@ -56,4 +56,11 @@ public class UIMenu : MonoBehaviour
         SFX.Play();
         Application.Quit();
     }
+
+    public void CreditsFunct()
+    {
+        SFX.clip = Sounds[0];
+        SFX.Play();
+        SceneManager.LoadScene("Credits");
+    }
 }
