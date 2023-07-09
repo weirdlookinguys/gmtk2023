@@ -11,17 +11,13 @@ public class Patrol : MonoBehaviour
     private Vector2 direction;
     private Vector2 nextPosition;
     public bool reversePath = false;
-    public float viewAngle;
+    private float viewAngle;
     public float viewDist;
     public Transform player;
     public LayerMask viewMask;
-    [SerializeField] private Transform pfFieldOfView;
-    private FieldOfView fieldOfView;
 
-    void Start(){
-        fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FieldOfView>();
-        fieldOfView.SetViewAngle(viewAngle);
-        fieldOfView.SetViewDistance(viewDist);
+    void Start() {
+        viewAngle = 90;
     }
     private void Update() {
         if (coordinates.Length == 0)
@@ -37,16 +33,12 @@ public class Patrol : MonoBehaviour
 
             //transform.right = nextPosition - (Vector2)transform.position;
             transform.position = nextPosition;
-            //SetDirection(transform.right);
-            //SetOrigin(transform.position);
 
             if (Vector2.Distance(transform.position, currentPoint.position) <= 0.1f) {
                 currentPointIndex++;
                 if (currentPointIndex >= coordinates.Length)
                     currentPointIndex = 0;
             }
-            fieldOfView.SetDirection(transform.right);
-            fieldOfView.SetOrigin(transform.position);
         }
         else {
             //Later implementation
@@ -55,6 +47,7 @@ public class Patrol : MonoBehaviour
         {
             Debug.Log("PlayerSeen!");
         }
+
     }
 
     private void OnDrawGizmos()
@@ -83,7 +76,5 @@ public class Patrol : MonoBehaviour
         return false;
     }
 
-
     public Vector2 GetDirection() => direction;
-
 }
