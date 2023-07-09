@@ -94,7 +94,8 @@ public class PlayerAnimations : MonoBehaviour
                 if (x == 1) PartsBack[i].gameObject.transform.localPosition = FlipPositionBack[i];
                 else PartsBack[i].gameObject.transform.localPosition = StartingPositionBack[i];
             }
-           PartsBack[4].sortingOrder = x == 1 ? 1 : -1;
+           PartsBack[4].sortingOrder = x == 1 ? -1 :  1;
+           PartsBack[3].sortingOrder = x == 1 ?  1 : -1;
         }
 
         // Walking animation
