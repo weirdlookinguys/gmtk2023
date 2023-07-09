@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoMap.unity
     guid: ed83db0a254f6174899871a882942ac7
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 99b91510c9e7d394588f20add769357c
   m_configObjects: {}

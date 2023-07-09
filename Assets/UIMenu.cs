@@ -26,6 +26,7 @@ public class UIMenu : MonoBehaviour
     {
         Startx = Panel.position.x;
         Endx = PanelOpt.position.x;
+        DontDestroyOnLoad(Music.gameObject);
     }
 
     // Update is called once per frame
@@ -55,5 +56,12 @@ public class UIMenu : MonoBehaviour
         SFX.clip = Sounds[0];
         SFX.Play();
         Application.Quit();
+    }
+
+    public void CreditsFunct()
+    {
+        SFX.clip = Sounds[0];
+        SFX.Play();
+        SceneManager.LoadScene("Credits");
     }
 }
