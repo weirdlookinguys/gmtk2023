@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.UI;
+using UnityEngine.UI;
 using TMPro;
 
 public class SusTimer : MonoBehaviour
 {
     int Hour = 12, Minute = 0;
+    int HourLastSeen = 12;
     [SerializeField]
     float TickDuration, BlinkDuration;
     [SerializeField]
-    TextMeshProUGUI Clock, LastSeen;
+    TextMeshProUGUI Clock, LastSeen, Tasks;
     float timer;
     bool Waiting = false; 
     string Symbol = ":";
@@ -36,12 +37,17 @@ public class SusTimer : MonoBehaviour
             // Reset Timer
             timer = TickDuration;
         }
+        if (Hour > HourLastSeen + 3) { GameObject.Find("Player").GetComponent<Player>().WasSeen();
+            Debug.Log(Hour + ", " + HourLastSeen);
+        }
+
         // Update Clock UI
         if(!Waiting) StartCoroutine(BlinkTimer());
     }
     public void WasSeen()
     {
         LastSeen.text = Clock.text;
+        HourLastSeen = Hour;
     }
     IEnumerator BlinkTimer()
     {
@@ -56,5 +62,10 @@ public class SusTimer : MonoBehaviour
         Waiting = true;
         yield return new WaitForSeconds(BlinkDuration);
         Waiting = false;
+    }
+    public void DoneTask(int num)
+    {
+        if(num == 0) Tasks.text = "<s>- Put mess in suitcase</s><br><br>- Hide body";
+        if(num == 1) Tasks.text = "<s>- Put mess in suitcase<br><br>- Hide body</s>";
     }
 }

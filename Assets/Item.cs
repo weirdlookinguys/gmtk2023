@@ -46,6 +46,7 @@ public class Item : MonoBehaviour
         Debug.Log("Item hit trigger");
         if (collider.gameObject.CompareTag("jampile"))
         {
+            GameObject.Find("Main Camera").GetComponent<SusTimer>().DoneTask(0);
             collider.gameObject.SetActive(false);
             isJamInCase = true;
         }
@@ -54,6 +55,7 @@ public class Item : MonoBehaviour
         {
             Debug.Log("Baggage hit trigger");
             isJamInBaggage = true;
+            GameObject.Find("Main Camera").GetComponent<SusTimer>().DoneTask(1);
             this.gameObject.tag = "Untagged";
             this.gameObject.SetActive(false);
             

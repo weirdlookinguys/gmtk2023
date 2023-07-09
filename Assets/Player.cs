@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
     public Item currentCollisionItem; // What Items the trigger sees
     public Item currentlyHolding; // What the player is holding
     [SerializeField]
+    AudioClip Clip;
+    [SerializeField]
+    GameObject red;
+    [SerializeField]
     float movementSpeed = 5f;
     float mvtModifier;
 
@@ -91,8 +95,9 @@ public class Player : MonoBehaviour
     }
     IEnumerator Transition()
     {
-        //GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = Resources.Load();
-        //GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = Clip;
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();
+        red.SetActive(true);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("MainMenu");
     }
