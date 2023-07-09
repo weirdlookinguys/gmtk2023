@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
         // Pick up / drop item
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Holding Space");
             if (currentlyHolding == null && currentCollisionItem != null)
             {
                 isHoldingItem = true;
@@ -57,7 +56,6 @@ public class Player : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log("Hit");
         if (collider.gameObject.CompareTag("item") && !isHoldingItem) {
             //isCollidingWithItem = true;
             currentCollisionItem = collider.gameObject.GetComponent<Item>();
@@ -65,7 +63,6 @@ public class Player : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D collider) {
-        Debug.Log("No longer hit");
         if (collider.gameObject.CompareTag("item") && !isHoldingItem) {
             //isCollidingWithItem = false;
         }
