@@ -21,7 +21,7 @@ public class DialogueUI : MonoBehaviour
         dialogueObj = FindObjectOfType<Dialogue>();
         DialogueLibrary = dialogueObj.GetDialogueLibrary();
         TextMeshUI.text = string.Empty;
-        InitializeDialogue("Introduction");
+        //InitializeDialogue("Introduction");
     }
 
     void Update(){
