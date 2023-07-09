@@ -4,8 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public static class OptionsData
+{
+    public static float MusicVolume;
+    public static float SfxVolume;
+}
+
 public class UIMenu : MonoBehaviour
 {
+    public static bool musicStarted;
+    public static AudioSource TheMusic;
+
     [SerializeField]
     Button Begin, Options, Exit;
     [SerializeField]
@@ -24,9 +33,17 @@ public class UIMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!musicStarted)
+        {
+            TheMusic = Music;
+
+            Music.Play();
+            musicStarted = true;
+        }
+
         Startx = Panel.position.x;
         Endx = PanelOpt.position.x;
-        DontDestroyOnLoad(Music.gameObject);
+        DontDestroyOnLoad(TheMusic.gameObject);
     }
 
     // Update is called once per frame
@@ -36,8 +53,11 @@ public class UIMenu : MonoBehaviour
         PanelOpt.position = new Vector2(!isOnMain ? Mathf.Lerp(PanelOpt.position.x, Startx, .125f) : Mathf.Lerp(PanelOpt.position.x, Endx, .125f), PanelOpt.position.y);
 
         // Audio
-        Music.volume = SliderM.value;
+        TheMusic.volume = SliderM.value;
         SFX.volume = SliderS.value;
+
+        OptionsData.MusicVolume = SliderM.value;
+        OptionsData.SfxVolume = SliderS.value;
     }
     public void BeginFunct()
     {
