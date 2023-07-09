@@ -19,7 +19,7 @@ public class Patrol : MonoBehaviour
     private FieldOfView fieldOfView;
 
     void Start(){
-        fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FieldOfView>();
+        fieldOfView = Instantiate(pfFieldOfView, null   ).GetComponent<FieldOfView>();
         fieldOfView.SetViewAngle(viewAngle);
         fieldOfView.SetViewDistance(viewDist);
     }

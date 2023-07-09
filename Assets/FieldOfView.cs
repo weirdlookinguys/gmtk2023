@@ -68,6 +68,7 @@ public class FieldOfView : MonoBehaviour
         mesh.vertices = verticies;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        mesh.RecalculateBounds();
     }
 
 
