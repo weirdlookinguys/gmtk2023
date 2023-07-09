@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D Rb;
+    public AudioClip GrabClip;
+    public AudioSource Sfx;
 
     public bool isHoldingItem = false; // if the player is holding an item
     public Item currentCollisionItem; // What Items the trigger sees
@@ -41,6 +43,10 @@ public class Player : MonoBehaviour
                 isHoldingItem = true;
                 currentlyHolding = currentCollisionItem;
                 mvtModifier = .5f;
+
+                Sfx.clip = GrabClip;
+                Sfx.volume = OptionsData.SfxVolume;
+                Sfx.Play();
             }
         }
         else if (Input.GetKeyUp(KeyCode.Space))
