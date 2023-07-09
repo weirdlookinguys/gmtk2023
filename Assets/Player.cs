@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -66,5 +67,19 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("item") && !isHoldingItem) {
             //isCollidingWithItem = false;
         }
+    }
+    public void WasSeen()
+    {
+        if (isHoldingItem)
+        {
+            StartCoroutine(Transition());
+        }
+    }
+    IEnumerator Transition()
+    {
+        //GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = Resources.Load();
+        //GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
     }
 }

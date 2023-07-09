@@ -10,7 +10,7 @@ public class SusTimer : MonoBehaviour
     [SerializeField]
     float TickDuration, BlinkDuration;
     [SerializeField]
-    TextMeshProUGUI Clock;
+    TextMeshProUGUI Clock, LastSeen;
     float timer;
     bool Waiting = false; 
     string Symbol = ":";
@@ -38,6 +38,10 @@ public class SusTimer : MonoBehaviour
         }
         // Update Clock UI
         if(!Waiting) StartCoroutine(BlinkTimer());
+    }
+    public void WasSeen()
+    {
+        LastSeen.text = Clock.text;
     }
     IEnumerator BlinkTimer()
     {
