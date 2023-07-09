@@ -36,6 +36,6 @@ public class CharacterAnimationRotater : MonoBehaviour
             bool up = _patrol.GetDirection().y > 0;
             _animator.Play(up ? UpStateName : DownStateName);
         }
-        Debug.Log(myAngle);
+        //Debug.Log(myAngle);
     }
 }
