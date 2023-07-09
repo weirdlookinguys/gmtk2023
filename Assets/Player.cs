@@ -95,8 +95,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator Transition()
     {
-        GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = Clip;
-        GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();
+/*        GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = Clip;
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();*/
         red.SetActive(true);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("MainMenu");
