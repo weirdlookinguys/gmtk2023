@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6008342904235867791}
   - component: {fileID: 6008342904235867789}
   - component: {fileID: 6008342904235867788}
-  - component: {fileID: 6008342904235867786}
   - component: {fileID: 2825317099223644514}
+  - component: {fileID: 2809403896654122355}
   m_Layer: 0
   m_Name: SecurityGuard
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6008342904235867789
 SpriteRenderer:
@@ -107,30 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &6008342904235867786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008342904235867790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6bac110a33fb047b27de9423c83fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinates:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 1
-  reversePath: 0
-  viewDist: 0
-  player: {fileID: 0}
-  viewMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &2825317099223644514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +123,25 @@ MonoBehaviour:
   UpStateName: 
   SideStateName: 
   Threshold: 0.1
+--- !u!114 &2809403896654122355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008342904235867790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0248a31e2f41349bb255080bf587b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coordinates: []
+  speed: 5
+  reversePath: 0
+  viewAngle: 0
+  viewDist: 0
+  player: {fileID: 0}
+  viewMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pfFieldOfView: {fileID: 4813328759417766648, guid: 41fa6150436c44a4c96e1de80b65e8e3, type: 3}
