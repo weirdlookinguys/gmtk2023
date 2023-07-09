@@ -35,7 +35,7 @@ public class Patrol : MonoBehaviour
             float movementAmount = speed * Time.deltaTime;
             nextPosition = (Vector2)transform.position + (direction * movementAmount);
 
-            transform.right = nextPosition - (Vector2)transform.position;
+            //transform.right = nextPosition - (Vector2)transform.position;
             transform.position = nextPosition;
             //SetDirection(transform.right);
             //SetOrigin(transform.position);
@@ -82,5 +82,8 @@ public class Patrol : MonoBehaviour
         }
         return false;
     }
+
+
+    public Vector2 GetDirection() => direction;
 
 }

@@ -6,7 +6,7 @@ public class PlayerAnimations : MonoBehaviour
 {
     // Sprite flipping
     [SerializeField]
-    SpriteRenderer[] Parts, PartsBack; // body, eyeR, eyeL, legR, legL, armR, armL (butt replaces eyes in back)
+    SpriteRenderer[] Parts, PartsBack, PartsL, PartsBackL; // body, eyeR, eyeL, legR, legL, armR, armL (butt replaces eyes in back)
     [SerializeField]
     Vector3[] FlipPosition, FlipPositionBack;
     Vector3[] StartingPosition, StartingPositionBack;
@@ -39,20 +39,23 @@ public class PlayerAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Get starting positions for forward/backward sprites
+        // Get starting positions for forward/backward sprites / get FlipPosition and FlipPositionBack from copies
         StartingPosition = new Vector3[Parts.Length];
         for (int i = 0; i < Parts.Length; i++) {
             StartingPosition[i] = Parts[i].gameObject.transform.localPosition;
+            FlipPosition[i] = PartsL[i].gameObject.transform.localPosition;
         }
         StartingPositionBack = new Vector3[PartsBack.Length];
         for (int i = 0; i < PartsBack.Length; i++)
         {
             StartingPositionBack[i] = PartsBack[i].gameObject.transform.localPosition;
+            FlipPositionBack[i] = PartsBackL[i].gameObject.transform.localPosition;
         }
 
         // Set initial eye positions
         LeftEyePos = LeftEye.transform.localPosition;
         RightEyePos = RightEye.transform.localPosition;
+
     }
 
     // Update is called once per frame
@@ -87,9 +90,12 @@ public class PlayerAnimations : MonoBehaviour
             for (int i = 0; i < PartsBack.Length; i++)
             {
                 PartsBack[i].flipX = x == 1;
+
                 if (x == 1) PartsBack[i].gameObject.transform.localPosition = FlipPositionBack[i];
                 else PartsBack[i].gameObject.transform.localPosition = StartingPositionBack[i];
             }
+           PartsBack[4].sortingOrder = x == 1 ? -1 :  1;
+           PartsBack[3].sortingOrder = x == 1 ?  1 : -1;
         }
 
         // Walking animation

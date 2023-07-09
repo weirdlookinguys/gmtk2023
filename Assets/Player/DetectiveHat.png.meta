@@ -135,8 +135,8 @@ TextureImporter:
         y: 24
         width: 56
         height: 33
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4757719, y: 0.885843}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -348,8 +348,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      DetectiveHat_4: -71983836
       DetectiveHat_3: 1158543085
-      DetectiveHat_7: 1618136932
+
       DetectiveHat_6: 1853783703
       DetectiveHat_1: -1395409161
       DetectiveHat_5: -810399821
@@ -358,7 +359,9 @@ TextureImporter:
       DetectiveHat_2: 864550625
       DetectiveHat_9: 1132139848
       DetectiveHat_8: -139668524
-      DetectiveHat_4: -71983836
+      
+      DetectiveHat_7: 1618136932
+      
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
