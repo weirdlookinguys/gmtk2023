@@ -26,6 +26,7 @@ public class UIMenu : MonoBehaviour
     {
         Startx = Panel.position.x;
         Endx = PanelOpt.position.x;
+        DontDestroyOnLoad(Music.gameObject);
     }
 
     // Update is called once per frame
