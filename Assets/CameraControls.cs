@@ -12,12 +12,13 @@ public class CameraControls : MonoBehaviour
     [Range(1, 10)]
     public int magnitude; // shake intensity
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // camera is shaking
         float x = 0;
         float y = 0;
-        if (shake) {
+        if (shake)
+        {
             shakeTime = .125f;
             shake = false;
         }

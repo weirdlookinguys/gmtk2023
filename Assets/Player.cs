@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Rigidbody2D Rb;
 
     public bool isHoldingItem = false;
     bool isCollidingWithItem = false;
@@ -15,10 +16,11 @@ public class Player : MonoBehaviour
         currentHeldItem = null;
     }
 
-    void Update() {
+    void FixedUpdate() {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-        transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
+        
+        Rb.velocity = new Vector2(horizontalInput, verticalInput) * movementSpeed;
 
         if(isHoldingItem && Input.GetKeyDown(KeyCode.Space)){
             isHoldingItem = false;
