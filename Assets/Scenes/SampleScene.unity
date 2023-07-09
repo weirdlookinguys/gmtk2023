@@ -639,6 +639,7 @@ MonoBehaviour:
   - {fileID: 1638720787}
   speed: 5
   reversePath: 0
+  viewDist: 0
 --- !u!4 &764843438
 Transform:
   m_ObjectHideFlags: 0
