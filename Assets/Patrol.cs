@@ -19,7 +19,7 @@ public class Patrol : MonoBehaviour
     private FieldOfView fieldOfView;
 
     void Start(){
-        fieldOfView = Instantiate(pfFieldOfView, null).GetComponent<FieldOfView>();
+        fieldOfView = Instantiate(pfFieldOfView, null   ).GetComponent<FieldOfView>();
         fieldOfView.SetViewAngle(viewAngle);
         fieldOfView.SetViewDistance(viewDist);
     }
@@ -35,7 +35,6 @@ public class Patrol : MonoBehaviour
             float movementAmount = speed * Time.deltaTime;
             nextPosition = (Vector2)transform.position + (direction * movementAmount);
 
-            //transform.right = nextPosition - (Vector2)transform.position;
             transform.position = nextPosition;
             //SetDirection(transform.right);
             //SetOrigin(transform.position);
@@ -45,7 +44,7 @@ public class Patrol : MonoBehaviour
                 if (currentPointIndex >= coordinates.Length)
                     currentPointIndex = 0;
             }
-            fieldOfView.SetDirection(transform.right);
+            fieldOfView.SetDirection(GetDirection());
             fieldOfView.SetOrigin(transform.position);
         }
         else {
@@ -60,10 +59,10 @@ public class Patrol : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.right * viewDist);
+        Gizmos.DrawRay(transform.position, GetDirection() * viewDist);
 
-        Vector3 rightDir = Quaternion.Euler(0f, 0f, -viewAngle / 2f) * transform.right;
-        Vector3 leftDir = Quaternion.Euler(0f, 0f, viewAngle / 2f) * transform.right;
+        Vector3 rightDir = Quaternion.Euler(0f, 0f, -viewAngle / 2f) * GetDirection();
+        Vector3 leftDir = Quaternion.Euler(0f, 0f, viewAngle / 2f) * GetDirection();
 
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, transform.position + rightDir * viewDist);
@@ -73,7 +72,7 @@ public class Patrol : MonoBehaviour
     bool CanSeePlayer() {
         if(Vector2.Distance(transform.position, player.position) < viewDist) {
             Vector2 dirToPlayer = (player.position - transform.position).normalized;
-            float angleBetweenPatrolAndPlayer = Vector2.Angle(transform.right, dirToPlayer);
+            float angleBetweenPatrolAndPlayer = Vector2.Angle(GetDirection(), dirToPlayer);
             if(angleBetweenPatrolAndPlayer < viewAngle / 2f)
             {
                 if (!Physics.Linecast(transform.position, player.position, viewMask))
@@ -84,6 +83,6 @@ public class Patrol : MonoBehaviour
     }
 
 
-    public Vector2 GetDirection() => direction;
+    public Vector2 GetDirection() => direction.normalized;
 
 }

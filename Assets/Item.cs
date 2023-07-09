@@ -16,15 +16,14 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isFollowingPlayer)
+/*        if (isFollowingPlayer)
         {
             Vector3 offset = (player.position - transform.position).normalized * -2f; // Adjust the offset value as desired
             Vector3 targetPosition = player.position + offset;
 
             // Move towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 20f);
-        }
-
+        }*/
     }
 
     public void FollowPlayer() {
